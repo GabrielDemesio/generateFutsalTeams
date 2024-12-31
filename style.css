@@ -81,20 +81,6 @@ button:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
-
-@media (max-width: 600px) {
-    .container {
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    textarea, select, button {
-        font-size: 14px;
-    }
-}
 footer {
     text-align: center;
     background-color: #007bff;
@@ -108,9 +94,21 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    textarea, select, button {
+        font-size: 14px;
+    }
     footer {
         font-size: 12px;
         padding: 8px;
     }
 }
+
 

@@ -6,20 +6,27 @@ function generateTeams() {
         .map(name => name.trim())
         .filter(name => name !== "");
 
-    if (names.length < teamCount) {
-        alert("Não há pessoas suficientes para formar todas as equipes!");
+    if (names.length < 5 || teamCount < 2) {
+        alert("É necessário ter ao menos 5 jogadores e 2 equipes.");
+        return;
+    }
+
+    const maxTeams = Math.ceil(names.length / 5);
+    if (teamCount > maxTeams) {
+        alert("O número de equipes é muito alto para a quantidade de jogadores.");
         return;
     }
 
     names.sort(() => Math.random() - 0.5);
 
     const teams = [];
+    let currentIndex = 0;
+
     for (let i = 0; i < teamCount; i++) {
-        teams.push([]);
+        const team = names.slice(currentIndex, currentIndex + 5); // Cada equipe terá 5 jogadores
+        teams.push(team);
+        currentIndex += 5;
     }
-    names.forEach((name, index) => {
-        teams[index % teamCount].push(name);
-    });
 
     const resultDiv = document.getElementById("result");
     resultDiv.innerHTML = "";

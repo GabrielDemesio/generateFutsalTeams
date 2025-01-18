@@ -23,7 +23,7 @@ function generateTeams() {
     let currentIndex = 0;
 
     for (let i = 0; i < teamCount; i++) {
-        const team = names.slice(currentIndex, currentIndex + 5); // Cada equipe terá 5 jogadores
+        const team = names.slice(currentIndex, currentIndex + 5);
         teams.push(team);
         currentIndex += 5;
     }
